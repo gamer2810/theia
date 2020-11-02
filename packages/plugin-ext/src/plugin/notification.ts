@@ -50,7 +50,10 @@ export class NotificationExtImpl implements NotificationExt {
 
     protected mapLocation(location: ProgressLocation | { viewId: string }): string | undefined {
         if (typeof location === 'object' && location.viewId) {
+            console.error('!!!!!!!!!!! location with viewID');
             return location.viewId;
+        } else {
+            console.error('!!!!!!!!!!! location NO viewID');
         }
 
         switch (location) {
